@@ -10,6 +10,27 @@ function on_gyro_data_uab(e)
 	document.getElementById("id_gamma").innerHTML = Math.rond(e.gamma*100)/100;
 }
 
+function desenare(unghi_x, unghi_y)
+{
+	//obtinem referinta la canvas
+	document.getElementbyId("id_canvas");
+	
+	//obtinem referinta la contextual
+	var context = canvas.getContext("2d");
+	//stergem canvasul
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	//incepem sa construim o cale  (path)
+	context.beginPath();
+	var r = 10;
+	var x= canvas.width/2+ unghi_x/90* (canvas.width/2-r);
+	var x= canvas.height/2+ unghi_y/90* (canvas.height/2-r);
+	
+	//adaugam cercul la cale
+	context.arc(,,r, 0, 2 * Math.PI);
+	//desenam calea
+	context.stroke();
+}
+
 function on_acc_data_uab(e)
 {
 	var acc = e.accelerationIncludingGravity;
@@ -23,6 +44,6 @@ function on_acc_data_uab(e)
 		document.getElementById("id_rot_y").innerHTML = Math.round(rot_y*100)/100;
 		
 		
-		
+		desenare(e.beta, e.gamma);
 		
 }
