@@ -1,4 +1,4 @@
-document.getElementById("").innerHTML = "logic = 2019.11.04.0"
+document.getElementById("id_logic").innerHTML = "logic = 2019.11.04.0"
 
 window.adddEventListener("deviceorientation", on_gyro_data_uab);
 
