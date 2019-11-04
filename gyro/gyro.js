@@ -26,7 +26,7 @@ function desenare(unghi_x, unghi_y)
 	var x= canvas.height/2+ unghi_y/90* (canvas.height/2-r);
 	
 	//adaugam cercul la cale
-	context.arc(,,r, 0, 2 * Math.PI);
+	context.arc(x,y,r, 0, 2 * Math.PI);
 	//desenam calea
 	context.stroke();
 }
